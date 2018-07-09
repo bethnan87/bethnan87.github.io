@@ -8,5 +8,5 @@ function draw() {
   //triangle(30,75,58,20,86,75);
   fill("orange");
   textSize(42);
-  text("hey there CPH", 100, 50);
+  text("Hi bae! I <3 u", 100, 50);
 }
