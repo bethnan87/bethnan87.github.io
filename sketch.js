@@ -1,13 +1,13 @@
 function setup() {
-  createCanvas(600,400);
+  createCanvas(1200,800);
 }
 
 function draw() {
   background('purple');
-  fill("green")
+  fill("yellow")
   ellipse(mouseX,mouseY,100,100);
-  triangle(30,75,58,20,86,75);
+  triangle(130,175,158,120,186,175);
   fill("orange");
-  textSize(42);
-  text("Hi bae! I <3 u", 100, 50);
+  textSize(55);
+  text("Hi bae! I <3 u", 250, 400);
 }
