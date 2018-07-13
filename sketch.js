@@ -1,21 +1,16 @@
-var data, phase, speed, maxCircleSize, numRows, numCols, numStrands, colorA, colorB;
-
-
-// // preload table data
-// function preload() {
-//   data = loadTable(
-//     'data/windspeed7days.csv',
-//     'csv',
-//     'header');
-// }
-
+var speedSlider, data, phase, speed, maxCircleSize, numRows, numCols, numStrands, colorA, colorB;
+var fr = 30
 function setup() {
   createCanvas(600, 600);
+  // textSize(18);
   noStroke();
-  text("Thursday 12 July", 50, 200);
+  frameRate(10);
 
+//create slider
+speedSlider = createSlider(1, 14, 1);
+speedSlider.position(235,100);
+  speed = .0005;
   phase = 0;
-  speed = 0.1;
   maxCircleSize = 35;
   numRows = 20;
   numCols = 14;
@@ -27,7 +22,16 @@ function setup() {
 
 function draw() {
   background(58);
-  phase = frameCount * speed;
+  phase = frameCount * speedSlider.value();
+  print(speedSlider.value());
+
+  //display text
+  noStroke();
+  fill(155);
+  textAlign(CENTER);
+  textFont("Georgia");
+  textSize(35);
+  text("Day: " + speedSlider.value(), 130, 120);
 
   for (var strand = 0; strand < numStrands; strand += 1) {
     var strandPhase = phase + map(strand, 0, numStrands, 0, QUARTER_PI);
